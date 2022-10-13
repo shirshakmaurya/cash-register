@@ -3,3 +3,18 @@
     flex-direction: column;
     width: 50vw;
     }
+
+#main-head{
+    color: #6E85B7;
+}
+
+input{
+    border: 2px solid #6E85B7;
+}
+button{
+    margin: 5px;
+    padding: 5px;
+}
+input{
+    color: #6E85B7;
+}

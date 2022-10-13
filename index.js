@@ -14,10 +14,14 @@ const availableNotes = [2000,500,100,20,10,5,1]
 checkButton.addEventListener("click", function cashAndBillValidator(){
     hideMessage();
     // console.log("clicked")
-    if(billAmount.value === cashGiven.value){
+    if((billAmount.value === "" || cashGiven.value==="") || (billAmount.value === "" || cashGiven.value==="")){
+        showMessage("Please enter correct value in both the fields")
+    }
+    else if(billAmount.value === cashGiven.value){
         showMessage("Cash Received is same as bill amount. No Change to return")
 
     }
+
     else if(billAmount.value > 0){
         if(parseInt(cashGiven.value) >= parseInt(billAmount.value)){
             const amountToReturn = cashGiven.value - billAmount.value;
@@ -26,7 +30,7 @@ checkButton.addEventListener("click", function cashAndBillValidator(){
         }
         else if(cashGiven.value<0){showMessage("Cash given should be positive")}
 
-        else if(cashGiven.value<billAmount.value){
+        else if(Number(cashGiven.value) < Number(billAmount.value)){
             showMessage("Give more cash ")
         }   
         
